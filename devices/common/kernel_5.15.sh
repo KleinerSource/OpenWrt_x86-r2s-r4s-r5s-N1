@@ -29,6 +29,8 @@ curl -sfL https://raw.githubusercontent.com/coolsnowwolf/lede/master/target/linu
 
 sed -i "s/tty\(0\|1\)::askfirst/tty\1::respawn/g" target/linux/*/base-files/etc/inittab
 
+sed -i "s/CONFIG_WERROR=y/CONFIG_WERROR=n/" target/linux/generic/config-5.15
+
 echo "
 CONFIG_TESTING_KERNEL=y
 CONFIG_PACKAGE_kmod-ipt-coova=n
